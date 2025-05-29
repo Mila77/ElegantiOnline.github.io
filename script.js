@@ -1,47 +1,63 @@
-const imagenes = document.querySelector('.carrusel-imagenes');
-const total = imagenes.children.length;
-let indice = 0;
+document.addEventListener("DOMContentLoaded", () => {
+  const carruseles = document.querySelectorAll(".carrusel");
 
-document.querySelector('.siguiente').addEventListener('click', () => {
-  indice = (indice + 1) % total;
-  actualizarCarrusel();
+  carruseles.forEach(carrusel => {
+    const imagenes = carrusel.querySelectorAll(".carrusel-imagenes img");
+    const btnAnterior = carrusel.querySelector(".anterior");
+    const btnSiguiente = carrusel.querySelector(".siguiente");
+    let indiceActual = 0;
+
+    // Oculta todas las imágenes menos la primera
+    function mostrarImagen(index) {
+      imagenes.forEach((img, i) => {
+        img.style.display = i === index ? "block" : "none";
+      });
+    }
+
+    // Mostrar primera imagen
+    mostrarImagen(indiceActual);
+
+    // Botón siguiente
+    btnSiguiente.addEventListener("click", () => {
+      indiceActual = (indiceActual + 1) % imagenes.length;
+      mostrarImagen(indiceActual);
+    });
+
+    // Botón anterior
+    btnAnterior.addEventListener("click", () => {
+      indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(indiceActual);
+    });
+  });
 });
 
-document.querySelector('.anterior').addEventListener('click', () => {
-  indice = (indice - 1 + total) % total;
-  actualizarCarrusel();
-});
 
-function actualizarCarrusel() {
-  imagenes.style.transform = `translateX(-${indice * 100}%)`;
-}
 
-document.querySelectorAll('.carrusel').forEach(carrusel => {
-  const contenedor = carrusel.querySelector('.carrusel-imagenes');
-  const imagenes = carrusel.querySelectorAll('img');
-  const btnAnterior = carrusel.querySelector('.anterior');
-  const btnSiguiente = carrusel.querySelector('.siguiente');
+document.addEventListener("DOMContentLoaded", () => {
+  const carruseles = document.querySelectorAll(".carrusel");
 
-  let index = 0;
+  carruseles.forEach(carrusel => {
+    const imagenes = carrusel.querySelectorAll(".carrusel-imagenes img");
+    const btnAnterior = carrusel.querySelector(".anterior");
+    const btnSiguiente = carrusel.querySelector(".siguiente");
+    let indiceActual = 0;
 
-  const mostrarImagen = () => {
-    const ancho = carrusel.clientWidth;
-    contenedor.style.transform = `translateX(-${index * ancho}px)`;
-  };
-
-  btnSiguiente.addEventListener('click', () => {
-    if (index < imagenes.length - 1) {
-      index++;
-      mostrarImagen();
+    function mostrarImagen(index) {
+      imagenes.forEach((img, i) => {
+        img.style.display = i === index ? "block" : "none";
+      });
     }
-  });
 
-  btnAnterior.addEventListener('click', () => {
-    if (index > 0) {
-      index--;
-      mostrarImagen();
-    }
-  });
+    mostrarImagen(indiceActual);
 
-  window.addEventListener('resize', mostrarImagen);
+    btnSiguiente.addEventListener("click", () => {
+      indiceActual = (indiceActual + 1) % imagenes.length;
+      mostrarImagen(indiceActual);
+    });
+
+    btnAnterior.addEventListener("click", () => {
+      indiceActual = (indiceActual - 1 + imagenes.length) % imagenes.length;
+      mostrarImagen(indiceActual);
+    });
+  });
 });

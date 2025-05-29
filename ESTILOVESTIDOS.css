@@ -1,0 +1,147 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@300;500&display=swap');
+
+body {
+  margin: 0;
+  padding: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(rgb(243, 140, 140), rgba(255, 0, 0, 0.918)), url('portada.jpg') no-repeat center center;
+  
+  color: #333;
+}
+
+/* Título principal */
+.titulo {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 40px;
+  color: #000000;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+/* Botón de volver */
+.boton, .pip {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 0.95em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.boton {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #d66e0d;
+  color: rgb(255, 249, 249);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.boton:hover {
+  background-color: #d66e0d;
+  transform: scale(1.05);
+}
+
+.pip {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 1.25em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  color: rgb(19, 18, 18);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  background-color: #d2dd6b;
+}
+
+.pip:hover {
+  background-color: #d2dd6b;
+  transform: scale(1.05);
+}
+
+
+
+/* Grid que contiene los carruseles */
+.grid-carruseles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px;
+  padding: 0 10px;
+}
+
+/* Estilo del carrusel */
+.carrusel {
+  position: relative;
+  overflow: hidden;
+  border-radius: 30px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  width: 100%;
+  background-color: #fff;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrusel:hover {
+  transform: scale(1.01);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Contenedor de imágenes en línea */
+.carrusel-imagenes {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  height: 100%;
+}
+
+/* Imágenes */
+.carrusel img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  flex: 0 0 100%;
+}
+
+/* Botones de navegación */
+.anterior,
+.siguiente {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(122, 60, 168, 0.7);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  padding: 10px 14px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 10;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+.anterior:hover,
+.siguiente:hover {
+  background-color: rgba(122, 60, 168, 0.9);
+  transform: scale(1.1);
+}
+
+.anterior {
+  left: 10px;
+}
+
+.siguiente {
+  right: 10px;
+}

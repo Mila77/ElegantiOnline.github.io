@@ -1,0 +1,240 @@
+/* Tipografías */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Raleway:wght@300;500&display=swap');
+
+/* Reset General */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+  color: #333;
+  background: linear-gradient(to right, #057014, #0ec268);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Portada */
+.portada {
+  background: linear-gradient(rgb(6, 112, 32), rgba(166, 218, 159, 0.7)), url('portada.jpg') no-repeat center center;
+  background-size: cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.portada-contenido {
+  
+  background-color: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  max-width: 700px;
+  padding: 40px;
+  text-align: center;
+}
+
+.portada-contenido h1 {
+  font-size: 4rem;
+  color: #032712;
+  margin-bottom: 20px;
+}
+
+.portada-contenido h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2em;
+  margin-bottom: 10px;
+  color: #01330c;
+}
+
+.portada-contenido h2 {
+  font-size: 1.5em;
+  color: #555;
+  margin: 30px 0 10px;
+}
+
+.portada-contenido p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  line-height: 1.6;
+}
+
+/* Botones */
+.boton, .pip {
+  display: inline-block;
+  padding: 12px 25px;
+  font-size: 1em;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  font-weight: bold;
+  top: 20px;
+  left: 20px;
+  background-color: #58be2f;
+  color: white;
+  margin: 15px 10px;
+}
+
+.boton {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  background-color: #58be2f;
+  color: white;
+}
+
+.boton:hover {
+  background-color:  #58be2f;
+}
+
+.pip {
+  display: inline-block;
+  padding: 8px 18px;
+  font-size: 1.25em;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  color: rgb(19, 18, 18);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  margin: 40px auto;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  background-color: #58be2f;
+  color: white;
+}
+
+.pip:hover {
+  background-color: #58be2f;
+  transform: scale(1.05);
+}
+
+/* Nosotros */
+.nosotros {
+  padding: 40px 20px;
+}
+
+.contenido-nosotros {
+  max-width: 800px;
+  margin: 40px auto;
+  background-color: #ffffffee;
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.contenido-nosotros h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5em;
+  color: #012b0d;
+  margin-bottom: 25px;
+}
+
+.contenido-nosotros p {
+  font-size: 1.2em;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  text-align: justify;
+  color: #444;
+}
+
+/* Galería */
+.titulo-galeria {
+  text-align: center;
+  margin: 40px 0 20px;
+  color:  #012b0d;
+  font-weight: bold;
+}
+
+.carousel-container {
+  margin-bottom: 60px;
+}
+
+.carousel-caption {
+  background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  color: #000;
+}
+
+/* Sección estándar */
+section {
+    background-color: rgba(255, 255, 255, 0.75);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  padding: 2rem;
+  max-width: 800px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  line-height: 1.6;
+}
+
+section h2 {
+  color:  #012b0d;
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+section p {
+  margin-bottom: 1.2rem;
+  font-size: 1.05rem;
+  text-align: justify;
+}
+
+/* WhatsApp botón */
+a[href*="wa."] {
+  display: inline-block;
+  margin-top: 20px;
+  background-color: #25D366;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 1em;
+  transition: background-color 0.3s;
+}
+
+a[href*="wa."]:hover {
+  background-color: #1ebd59;
+}
+
+/* iframe responsivo */
+iframe {
+  max-width: 100%;
+  border-radius: 12px;
+  margin-top: 15px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .contenido-nosotros {
+    padding: 20px;
+  }
+
+  .pip {
+    width: 100%;
+    margin-top: 10px;
+  }
+
+  .boton {
+    top: 10px;
+    left: 10px;
+    padding: 8px 15px;
+  }
+
+  .portada-contenido h1 {
+    font-size: 2.5rem;
+  }
+
+  .portada-contenido p {
+    font-size: 1rem;
+  }
+}
